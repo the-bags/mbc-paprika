@@ -2,8 +2,6 @@
 var Web3 = require('web3');
 //var web3 = new Web3();
 
-console.log('Show coinbase');
-
 //console.log(web3);
 
 // if (typeof web3 !== 'undefined') {
@@ -21,7 +19,12 @@ var web3 = new Web3();
 web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545'));
 
 var coinbase = web3.eth.coinbase;
-console.log(coinbase);
+var blockNumber = web3.eth.blockNumber;
+var syncing = web3.eth.syncing;
+
+console.log('coinbase: ',coinbase);
+console.log('blockNumber: ',blockNumber);
+console.log('syncing:', web3.eth.syncing);
 
 
  // var accounts = web3.eth.accounts;
