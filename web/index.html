@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Simple UI</title>
+        <script src="./js/lib/vue.js"></script>
+        <script src="./js/lib/jquery-3.3.1.min.js"></script>
+        <script src="./js/lib/underscore-min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+                <input v-model="urlNode" placeholder="Type instance URL on which the node is running">
+                <button v-on:click="sendURL">ok</button>
+        </div>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
