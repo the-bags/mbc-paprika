@@ -1,5 +1,6 @@
 {
   "port": 8000,
   "files": ["./web/**/*.{html,htm,css,js}"],
-  "server": { "baseDir": "./web" }
+  "server": { "baseDir": "./web" },
+  "cors": true
 }

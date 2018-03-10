@@ -7,11 +7,12 @@
     </head>
     <body>
         <div id="app">
-                <input v-model="urlNode" placeholder="127.0.0.1:8545">
-                <button v-on:click="sendURL">ok</button>
+                <input v-model="urlNode">
+                <button v-on:click="getData">ok</button>
                 <h1>State / Syncing : {{syncing}}</h1>
                 <h1>Block Number : {{blockNumber}}</h1>
                 <h1>Account / Coinbase : {{coinbase}}</h1>
+		<h1>Balance : {{balance}}</h1>
                 <h1>Update will be in {{time}}</h1>
         </div>
         <script src="./js/app.js"></script>

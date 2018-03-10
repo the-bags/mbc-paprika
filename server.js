@@ -13,9 +13,17 @@ server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
 server.use(
     function crossOrigin(req,res,next){
-      res.header("Access-Control-Allow-Origin", "*");
-      res.header("Access-Control-Allow-Headers", "X-Requested-With");
-      return next();
+       // Website you wish to allow to connect
+       res.header('Access-Control-Allow-Origin', '*');
+       // Request methods you wish to allow
+       res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+       // Request headers you wish to allow
+       res.header('Access-Control-Allow-Headers', '*');
+       res.header('Access-Control-Request-Method', '*');
+       // Set to true if you need the website to include cookies in the requests sent
+       // to the API (e.g. in case you use sessions)
+       res.header('Access-Control-Allow-Credentials', true);
+       return next();
     }
   );
 
@@ -66,9 +74,11 @@ server.get('/:instanceUrl/account', function (req, res, next) {
     web3.setProvider(new web3.providers.HttpProvider(url));
     if(web3.isConnected()) {
         var coinbase = web3.eth.coinbase;
+        var balance = web3.eth.getBalance(coinbase);
         console.log('coinbase:', coinbase,' req:', req.params.instanceUrl)
         res.send({
-            coinbase : coinbase
+            coinbase : coinbase,
+            balance : balance
         });
      } else {
         console.log('Error');

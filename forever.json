@@ -1,0 +1,10 @@
+[
+  {
+    // Server for geth
+    "uid": "server-geth",
+    "append": true,
+    "watch": true,
+    "script": "server.js",
+    "sourceDir": "/home/ubuntu/mbc-paprika"
+  }
+]
